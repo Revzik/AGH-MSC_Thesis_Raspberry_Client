@@ -1,6 +1,7 @@
 import random
 import time
 import logging
+import numpy as np
 
 
 class Acquisitor:
@@ -9,9 +10,9 @@ class Acquisitor:
         self.running = False
 
     def acquire_and_send(self):
-        x = random.randint(0, 100)
-        logging.info("Acquired data %d, sending..." % x)
-        self.client.send_data(x)
+        x = np.random.rand(1024)
+        logging.info("Acquired data, sending...")
+        self.client.send_ndarray(x)
 
     def run(self):
         logging.info("Starting data acquisition...")

@@ -1,8 +1,8 @@
 import argparse
 import logging
 
-from client.client import Client
-from client.acquisitor import Acquisitor
+from pi_client import Client
+from acquisitor import Acquisitor
 
 
 parser = argparse.ArgumentParser()
